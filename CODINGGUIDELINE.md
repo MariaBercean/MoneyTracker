@@ -5,7 +5,7 @@
 ###1.	Indentation
 
 		- Basic indentations should be 1 tab or 4 spaces.
-		 	_EXAMPLE_
+		 	**EXAMPLE**
 			```
 			while (!done) {
 				doSomething();
@@ -17,8 +17,23 @@
 ###2.	Whitespace
 
 		- Conventional operators should be surrounded by a space character. 
+			*EXAMPLE*
+			```
+			for (i = 0; i < nElements; i++)
+			```
+			
 		- C++ reserved words should be followed by a white space. 
+			_EXAMPLE_
+			```
+			if (condition) {
+				statements;
+			}
+			```
 		- Commas should be followed by a white space. 
+			_EXAMPLE_
+			```
+			computeDistance(average, x, y, z)
+			```
 		- Colons should be followed by a white space. 
 		- Semicolons in for statments should be followed by a space character.
 		
