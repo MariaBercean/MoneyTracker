@@ -5,7 +5,7 @@
 ###1.	Indentation
 
 		- Basic indentations should be 1 tab or 4 spaces.
-		 	*EXAMPLE*
+		 	_EXAMPLE_
 			```
 			while (!done) {
 				doSomething();
