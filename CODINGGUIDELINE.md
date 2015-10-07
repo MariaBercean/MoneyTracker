@@ -12,36 +12,84 @@
 				done = moreToDo();
 			}
 			```
+			
 		- Line length should be maximum 80 characters. 
 		
 ###2.	Whitespace
 
 		- Conventional operators should be surrounded by a space character. 
-			*EXAMPLE*
+			**EXAMPLE**
 			```
 			for (i = 0; i < nElements; i++)
 			```
 			
 		- C++ reserved words should be followed by a white space. 
-			_EXAMPLE_
+			**EXAMPLE**
 			```
 			if (condition) {
 				statements;
 			}
 			```
+			
 		- Commas should be followed by a white space. 
-			_EXAMPLE_
+			**EXAMPLE**
 			```
 			computeDistance(average, x, y, z)
 			```
+			
 		- Colons should be followed by a white space. 
+			**EXAMPLE**
+			```
+			class SomeClass : public BaseClass
+			```
+			
 		- Semicolons in for statments should be followed by a space character.
-		
+			**EXAMPLE**
+			```
+			for (initialization; condition; update)
+			```
+			
 ###3.	Empty lines
 
 		- Leave an empty line between groups of include statements.
+			**EXAMPLE**
+			```
+			#include <fstream>
+			#include <iomanip>
+
+			#include <qt/qbutton.h>
+			#include <qt/qtextfield.h>
+			```
 		- Leave an empty line between function implementations.
+			**EXAMPLE**
+			```
+			int getValue()   
+			{
+			  ...
+			}
+			
+			int getValue()   
+			{
+			  ...
+			}
+			```
+		
 		- Leave an empyt line between state and behaviour members of a class.
+			**EXAMPLE**
+			```
+			class MyClass
+			{
+			public:
+			  int getValue ();  
+			  ...
+
+			private:
+			  int value_;
+			}
+			```
+			
+		
+		
 		
 ###4.	Split lines
 
@@ -50,33 +98,100 @@
 			- Break after an operator.
 			- Align the new line with the beginning of the expression on the 
 				previous line.
-				
+			**EXAMPLE**
+			```	
+			for (int tableNo = 0; tableNo < nTables;
+				tableNo += tableStep) {
+				...
+			}
+			```
+			
 ###5.  Brackets
 
 		- when used in block layout the opening bracket should be in the same 
 			line but separated with a white space
+			**EXAMPLE**
+			```
+			try {
+				statements;
+			}
+			catch (Exception& exception) {
+				statements;
+			}
+			```
+			
 		- when used in class and function definition the opening bracket 
 			should be in a new line but without indentation 
+			**EXAMPLE**
+			```
+			void MyClass::myMethod(void)
+			{
+				...
+			}
+			```
+			
 		- in all cases the closing bracket should be on a new line and without
-			indentation in respect to the current block
+			indentation in respect to the current block (as seen above)
+
 
 ###6.	Naming convention
 
 		- Abbreviations in names should be avoided.
+			**EXAMPLE**
+			```
+			computeAverage();   // NOT: compAvg();
+			```
+			
 		- Names shold be suggestive
+			**EXAMPLE**
+			```
+			void printPriceEarningRatio();   // NOT: void printPER();
+			```
+			
 		- Type names must be in mixed case starting with upper case.
+			**EXAMPLE**
+			```
+			SavingsAccount :: getSavings ();  
+			```
 		- Variable names must be in mixed case starting with lower case.
+			**EXAMPLE**
+			```
+			savingsAccount;   // NOT: savingsaccount;
+			```
 		- Private class variables should have underscore suffix.
-		- Non-generic variables that have a role should be named by combining 
-			the role and the type
-		- Named constants (including enumeration values) must be all uppercase 
-			using underscore to separate words. (defined, global...)
+			**EXAMPLE**
+			```
+			class SomeClass {
+				private:
+					int length_;
+			}
+			```
 		- Names representing methods or functions must be verbs and written 
 			in mixed case starting with lower case.
-		- Global variables should always be referred to using the :: operator.
+		- Non-generic variables that have a role should be named by combining 
+			the role and the type
+			**EXAMPLE**
+			```
+			computeAverage();
+			```
+			
+		- Named constants (including enumeration values) must be all uppercase 
+			using underscore to separate words. (defined, global...)
+			the role and the type
+			**EXAMPLE**
+			```
+			#typedef MAX_SIZE 50
+			const int MAX_LENGTH = 100;
+			```
+			
 		- All names should be written in English.
 		- The terms get/set must be used where an attribute is accessed directly.
 		- Plural form should be used on names representing collections.
+			**EXAMPLE**
+			```
+			std::list<MyObject> myobjects; 
+			```
+			
 		- Where possible variables should be named for general purpose not 
 			context specific 
 		
@@ -87,18 +202,27 @@
 			required
 		- All comments should be written in English.
 		- Use // for all comments, including multi-line comments.
-		- Comments should be included relative to their position in the code.
-		- Commnets line length should not exceed 80 characters.
+		- Comments line length should not exceed 80 characters.
 		- Comments for functions should be placed in the header file before 
 			the function prototype
+			**EXAMPLE**
+			```
+			//constructor
+			//creates game with empty board and selects 
+			//the first player
+			TicTacToe(const Player_E firstPlayer); 
+			```
 		
 ###8.	Files separation
 
 		- The application should be structured in modules representing 
 			different functionalities
+			![alt text](image.jpg)
+			
 		- Separate files for prototypes and implementations should be used
 		
-
+		
+#### For more examples of code click here [link](http://geosoft.no/development/cppstyle.html)
 		
 		
 		
