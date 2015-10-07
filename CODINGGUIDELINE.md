@@ -6,11 +6,12 @@
 
 		- Basic indentations should be 1 tab or 4 spaces.
 		 	*EXAMPLE*
+			```
 			while (!done) {
 				doSomething();
 				done = moreToDo();
 			}
-
+			```
 		- Line length should be maximum 80 characters. 
 		
 ###2.	Whitespace
