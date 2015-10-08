@@ -1,16 +1,17 @@
 #ifndef WALLET_H
 #define WALLET_H
 
+#include <vector>
+
+#include "WalletEntry.h"
+
 class Wallet
 {
 	private:
 		const float initialSum_;
-		long int timestamp_;
-		char operation_;
-		float amount_;
-		std :: string amountType_;
-		std :: string currencyType_;
-		
+		std :: string currency_;
+		vector<WalletEntry> walletList_; 
+	
 	public:
 		void writeToFile();
 		Wallet();
