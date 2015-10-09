@@ -15,6 +15,7 @@ class Wallet
 	public:
 		void writeToFile();
 		Wallet();
+		void createFile()
 		
 	
 };

@@ -1,15 +1,20 @@
 #ifndef INTERPRETER_H
 #define INTERPRETER_H
 
+#include "Error_C.h"
+#include "ListOfCommands.h"
+
 class Interpreter
 {
 	private:
+		Wallet wallet_;
 		
 	public:
-		bool verifyCommand(const std :: string command);
-		void interpretCommand(const int length, const char * commandList[]);
-		void createWallet(const std :: string wallet, const char operation, const float amount);
-		void addIncome(const float amount);
+		bool isValidCommand(const std :: string &command);
+		void createWallet(const std :: string &fileName, const std :: string amount);
+		void addIncome(const std :: string &amount);
+		char returnOperation(const std :: string amount);
+		bool isValidAmount(const std :: string &amount);
 };
 
 #endif
