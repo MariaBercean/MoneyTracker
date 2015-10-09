@@ -48,7 +48,7 @@ void Interpreter :: createWallet(const string &fileName, const & string amount)
 	}
 	else{
 		amountSum = atof(amount.c_str());
-		wallet_.createFile(fileName, operation, amountSum);
+		wallet_.createNewWalletFile(fileName, operation, amountSum);
 	}
 	
 
