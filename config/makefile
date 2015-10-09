@@ -10,9 +10,10 @@ HEADERS=\
 
 TESTS=\
 
+GTEST_DIR=C:\gtest-1.7.0\gtest-1.7.0
 
 src\Errors.o: src\Errors.cpp $(HEADERS)
-	$(CPP) $(CPPFLAGS) -c src\Errors.cpp
+	$(CPP) -c src\Errors.cpp
 
 	
 	
