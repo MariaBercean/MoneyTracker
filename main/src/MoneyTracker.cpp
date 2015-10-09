@@ -8,27 +8,30 @@
 
 #include <iostream>
 #include "Interpreter.h"
-#include "Wallet.h"
-#include "Errors.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-	Interpreter interpreter;
+	Interpreter inter;
 	if (argc <= 1) {
 		cout << "There are no arguments:" << endl;
 		return 0;
-	} else {
-		cout << "There are " << argc << " arguments:" << endl;
+	} 
+	else {
 		int i = 1;
-		if (interpreter.isValidCommand(argv[i])){
-			if (argv[i] == "create") {
-				cout<<"lkdsacm";
+		if (inter.isValidCommand(argv[i]) == 1){
+		}
+			if (string(argv[i]) == "create") {
+				string fileName = argv[2];
+				string amount = argv[3];
+				inter.createWallet(fileName,amount);
+			}
+			else{
+				string amount = argv[2];
+				inter.addIncome("MyWallet.txt",amount);
+				cout << "The income was added to file!" << endl;
 			}
 		}
-		/* for (int i = 0; i < argc; i++) {
-			cout << i << " " << argv[i] << endl;
-		} */
-	}
+		
 	return 0;
 }

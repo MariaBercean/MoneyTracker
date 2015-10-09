@@ -42,7 +42,6 @@ void Interpreter :: createWallet(string &fileName, string &amount)
 	char operation = returnOperation(amount);
 	fileName = fileName + ".txt";
 	float amountSum = 0;
-	amount.erase(0);
 	if(isValidAmount(amount) == 0){
 		Error_C :: SetError(INVALID_INCOME_ERR);
 	}
@@ -58,7 +57,6 @@ void Interpreter :: addIncome(const string & fileName, string &amount)
 {
 	char operation = returnOperation(amount);
 	float amountSum;
-	amount.erase(0);
 	if(isValidAmount(amount) == 0){
 		Error_C :: SetError(INVALID_INCOME_ERR);
 	}

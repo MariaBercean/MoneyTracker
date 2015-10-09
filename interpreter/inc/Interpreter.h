@@ -1,7 +1,7 @@
 #ifndef INTERPRETER_H
 #define INTERPRETER_H
 
-#include "Errors.h"
+#include "Errorst.h"
 #include "Wallet.h"
 //#include "ListOfCommands.h"
 
