@@ -10,20 +10,21 @@ using namespace std;
 
 Wallet :: Wallet () 
 {
-	cout<<"ceapa lui de wallet";
+	//cout<<"ceapa lui de wallet";
 }
 
 void Wallet :: createNewWalletFile (const std :: string wallet, 
 									const char operation, const float amount) 
 {
 	if (fileExists (wallet.c_str())) {
-		cout<<"Error file allreasy exists : "<<endl;
+		//cout<<"Error file allreasy exists : "<<endl;
+		Error_C :: SetError(FILE_NAME_ERR);	
 	} else {
 		ofstream workFile;
 		workFile.open(wallet.c_str());
 		if (workFile.good()) {
 			//cout<<"Error writing to file : "<<endl;
-		//Error_C :: SetError(FILE_NAME_ERR);	
+		Error_C :: SetError(OPEN_FILE_ERR);	
 			workFile.close();
 		}
 		workFile << operation;
@@ -46,7 +47,8 @@ void Wallet :: addIncome(const std :: string wallet, const char operation,
 		workFile <<"RON \n"; 
 		workFile.close();
 	} else {
-		cout<<"Error the wallet file does not exist : "<<endl;
+		//cout<<"Error the wallet file does not exist : "<<endl;
+		Error_C :: SetError(OPEN_FILE_ERR);
 	}
 }
 

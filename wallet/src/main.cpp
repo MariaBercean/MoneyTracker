@@ -7,7 +7,7 @@
 //============================================================================
 
 #include <iostream>
-//#include "Wallet.h"
+#include "Wallet.h"
 #include "Errors.h"
 using namespace std;
 
@@ -23,14 +23,13 @@ int main(int argc, char *argv[]) {
 	}
 
 
-	Error_C :: SetError(FILE_NAME_ERR);		
-/* 	WalletEntry walletEntry;
-	cout<<"dadada"<<endl;
+	Error_C :: SetError(IS_OK);		
+	WalletEntry walletEntry;
 	cout<<walletEntry.getTimestamp ()<<endl;
-	
 	Wallet wallet;
-	cout<<wallet.fileExists ("..\\wallet.txt");
+	//cout<<wallet.fileExists ("..\\wallet.txt");
 	wallet.createNewWalletFile ("..\\fisier.txt", '+', 0);
-	wallet.addIncome ("..\\fisier.txt", '+', 250); */
+	wallet.addIncome ("..\\fisier.txt", '-', 255.557);
+	Error_C :: PrintError();
 	return 0;
 }

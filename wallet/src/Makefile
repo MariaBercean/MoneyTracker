@@ -3,8 +3,8 @@ CFLAGS = -Wall -c -I..\inc -I..\..\config\inc
 
 all: main
 
-main : WalletEntry.o Wallet.o Errors.o main.o 
-	$(COMPILE) -o main.exe main.o WalletEntry.o Wallet.o Errors.o
+main : WalletEntry.o Wallet.o ..\..\config\inc\Errors.o main.o 
+	$(COMPILE) -o main.exe main.o WalletEntry.o Wallet.o ..\..\config\inc\Errors.o
 	main.exe
 	
 main.o : main.cpp ..\inc\WalletEntry.h ..\inc\Wallet.h ..\..\config\inc\Errors.h ..\..\config\inc\ErrorTypes.h
@@ -16,7 +16,7 @@ WalletEntry.o : ..\inc\WalletEntry.h WalletEntry.cpp
 Wallet.o : ..\inc\Wallet.h Wallet.cpp ..\..\config\inc\Errors.h ..\..\config\inc\ErrorTypes.h
 	$(COMPILE) $(CFLAGS) Wallet.cpp 
 	
-Errors.o : ..\..\config\inc\Errors.cpp ..\..\config\inc\Errors.h ..\..\config\inc\ErrorTypes.h
+..\..\config\inc\Errors.o : ..\..\config\inc\Errors.cpp ..\..\config\inc\Errors.h ..\..\config\inc\ErrorTypes.h
 	$(COMPILE) $(CFLAGS) ..\..\config\inc\Errors.cpp
 		
 clean: 
