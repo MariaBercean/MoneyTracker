@@ -11,9 +11,9 @@ class WalletEntry
 		std :: string currencyType_;
 		
 	public:
+		WalletEntry ();
+		long int getTimestamp ();
 		
-		
-	
 };
 
 #endif
