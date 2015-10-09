@@ -19,6 +19,7 @@ void Wallet :: createNewWalletFile (const std :: string wallet,
 	if (fileExists (wallet.c_str())) {
 		//cout<<"Error file allreasy exists : "<<endl;
 		Error_C :: SetError(FILE_NAME_ERR);	
+		Error_C :: PrintError(wallet.c_str());
 	} else {
 		ofstream workFile;
 		workFile.open(wallet.c_str());
@@ -52,7 +53,7 @@ void Wallet :: addIncome(const std :: string wallet, const char operation,
 	}
 }
 
-bool Wallet :: fileExists (const std::string &fileName) 
+bool Wallet :: fileExists (const std :: string &fileName) 
 {
 	ifstream f(fileName.c_str());
     if (f.good()) {
@@ -62,3 +63,11 @@ bool Wallet :: fileExists (const std::string &fileName)
     f.close();
     return false;
 }
+
+
+std :: string SplitFilename (const std :: string &str)
+{
+	size_t found = str.find_last_of("/");
+	return str.substr(found+1);
+} 
+
