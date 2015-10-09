@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 
-#include "..\inc\Interpreter.h"
+#include "Interpreter.h"
 
 using namespace std;
 

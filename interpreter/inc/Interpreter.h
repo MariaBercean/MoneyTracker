@@ -1,8 +1,9 @@
 #ifndef INTERPRETER_H
 #define INTERPRETER_H
 
-#include "..\..\config\inc\Errors.h"
+#include "Errors.h"
 #include "ListOfCommands.h"
+#include "Wallet.h"
 
 class Interpreter
 {
