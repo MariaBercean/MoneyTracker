@@ -14,9 +14,7 @@ class Wallet
 	
 	public:
 		Wallet();
-<<<<<<< HEAD
 		void createFile()
-=======
 		void createNewWalletFile(const std :: string wallet, 
 								const char operation, const float amount);
 								
@@ -24,8 +22,6 @@ class Wallet
 						const float amount);
 						
 		bool fileExists (const std::string &fileName);
->>>>>>> origin/TaskCata
-		
 };
 
 
