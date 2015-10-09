@@ -22,7 +22,8 @@ void Wallet :: createNewWalletFile (const std :: string wallet,
 		ofstream workFile;
 		workFile.open(wallet.c_str());
 		if (workFile.good()) {
-			cout<<"Error writing to file : "<<endl;
+			//cout<<"Error writing to file : "<<endl;
+		//Error_C :: SetError(FILE_NAME_ERR);	
 			workFile.close();
 		}
 		workFile << operation;
