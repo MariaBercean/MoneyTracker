@@ -4,7 +4,7 @@
 #include <fstream>
 #include <iomanip>
 #include "Wallet.h"
-#include "Errors.h"
+#include "Errorst.h"
 
 using namespace std;
 
