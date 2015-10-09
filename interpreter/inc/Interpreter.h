@@ -1,7 +1,7 @@
 #ifndef INTERPRETER_H
 #define INTERPRETER_H
 
-#include "Error_C.h"
+#include "..\..\config\inc\Errors.h"
 #include "ListOfCommands.h"
 
 class Interpreter

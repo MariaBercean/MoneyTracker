@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 
-#include "Interpreter.h"
+#include "..\inc\Interpreter.h"
 
 using namespace std;
 
@@ -44,7 +44,7 @@ void Interpreter :: createWallet(const string &fileName, const & string amount)
 	float amountSum = 0;
 	amount.erase(0);
 	if(isValidAmount() == 0){
-		Error_C :: setErr();
+		Error_C :: setError(INVALID_INCOME_ERR);
 	}
 	else{
 		amountSum = atof(amount.c_str());
@@ -60,16 +60,16 @@ void Interpreter :: addIncome(const string &amount)
 	float amountSum;
 	
 	if(isValidAmount() == 0){
-		Error_C setErr();
+		Error_C setError(INVALID_INCOME_ERR);
 	}
 	else if(operation == '-')
 	{
-		Error_C :: setErr();
+		Error_C :: setError(NEG_INCOME_ERR);
 	}
 	else{
 		amountSum = atof(amount.c_str())
 		if(amountSum == 0){
-			Error_C :: setErr();
+			Error_C :: setError(NEG_INCOME_ERR);
 		}
 		else{
 		wallet_.addIncome(operation, amountSum);
