@@ -8,15 +8,20 @@
 class Wallet
 {
 	private:
-		const float initialSum_;
+		float initialSum_;
 		std :: string currency_;
-		vector<WalletEntry> walletList_; 
+		std::vector<WalletEntry> walletList_; 
 	
 	public:
-		void writeToFile();
 		Wallet();
+		void createNewWalletFile(const std :: string wallet, 
+								const char operation, const float amount);
+								
+		void addIncome(const std :: string wallet, const char operation, 
+						const float amount);
+						
+		bool fileExists (const std::string &fileName);
 		
-	
 };
 
 
