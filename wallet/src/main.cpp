@@ -7,12 +7,12 @@
 //============================================================================
 
 #include <iostream>
-#include "Wallet.h"
-
+//#include "Wallet.h"
+#include "Errors.h"
 using namespace std;
 
 int main(int argc, char *argv[]) {
-
+	
 	if (argc <= 1) {
 		cout << "There are no arguments:" << endl;
 	} else {
@@ -22,14 +22,15 @@ int main(int argc, char *argv[]) {
 		}
 	}
 
-	WalletEntry walletEntry;
-	
+
+	Error_C :: SetError(FILE_NAME_ERR);		
+/* 	WalletEntry walletEntry;
 	cout<<"dadada"<<endl;
 	cout<<walletEntry.getTimestamp ()<<endl;
 	
 	Wallet wallet;
 	cout<<wallet.fileExists ("..\\wallet.txt");
 	wallet.createNewWalletFile ("..\\fisier.txt", '+', 0);
-	wallet.addIncome ("..\\fisier.txt", '+', 250);
+	wallet.addIncome ("..\\fisier.txt", '+', 250); */
 	return 0;
 }
