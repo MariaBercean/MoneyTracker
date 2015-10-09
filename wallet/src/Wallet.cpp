@@ -16,6 +16,10 @@ Wallet :: Wallet ()
 void Wallet :: createNewWalletFile (const std :: string wallet, 
 									const char operation, const float amount) 
 {
+	cout<<"OHOOOOOO "<<wallet<<endl;
+	cout<<"OHOOOOOO "<<operation<<endl;
+	cout<<"OHOOOOOO "<<amount<<endl;
+	
 	if (fileExists (wallet.c_str())) {
 		//cout<<"Error file allreasy exists : "<<endl;
 		Error_C :: SetError(FILE_NAME_ERR);	
@@ -23,15 +27,18 @@ void Wallet :: createNewWalletFile (const std :: string wallet,
 	} else {
 		ofstream workFile;
 		workFile.open(wallet.c_str());
-		if (workFile.good()) {
+		if (!workFile.good()) {
 			//cout<<"Error writing to file : "<<endl;
 		Error_C :: SetError(OPEN_FILE_ERR);	
+		Error_C :: PrintError(wallet.c_str());
+			workFile.close();
+		} else {
+			//workFile.open();
+			workFile << operation;
+			workFile <<fixed << setprecision(2) <<amount; 
+			workFile << " " <<"RON \n"; 
 			workFile.close();
 		}
-		workFile << operation;
-		workFile <<fixed << setprecision(2) <<amount; 
-		workFile << " " <<"RON \n"; 
-		workFile.close();
 	}
 }
 

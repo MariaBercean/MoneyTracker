@@ -7,6 +7,7 @@
 //============================================================================
 
 #include <iostream>
+#include <string>
 #include "Interpreter.h"
 #include "Wallet.h"
 #include "Errors.h"
@@ -16,19 +17,28 @@ using namespace std;
 int main(int argc, char *argv[]) {
 	Interpreter interpreter;
 	if (argc <= 1) {
-		cout << "There are no arguments:" << endl;
+		Error_C :: SetError(NO_FILE_NAME_ERR);	
+		Error_C :: PrintError();
 		return 0;
 	} else {
 		cout << "There are " << argc << " arguments:" << endl;
 		int i = 1;
+		//cout<<argv[i]<<endl;
 		if (interpreter.isValidCommand(argv[i])){
-			if (argv[i] == "create") {
-				cout<<"lkdsacm";
+			if (string(argv[i]) == "create") {
+				string fileName = argv[i+1];
+				string amount = argv[i+2];
+				interpreter.createWallet(fileName, amount);
+			} else {
+				string fileName = "file.txt";
+				string amount = argv[i+1];
+				interpreter.addIncome(fileName, amount);
+			}
+		for (int i = 0; i < argc; i++) {
+			cout << i << " " << argv[i] << endl;
 			}
 		}
-		/* for (int i = 0; i < argc; i++) {
-			cout << i << " " << argv[i] << endl;
-		} */
 	}
+	
 	return 0;
 }
