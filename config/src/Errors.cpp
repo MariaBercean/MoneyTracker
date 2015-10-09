@@ -10,21 +10,29 @@ void Error_C :: SetError(Error_E state)
 	Error_C :: state = state;
 }
 		
+<<<<<<< HEAD
 Error_E Error_C :: GetError()
 {
 	return state;
 }
 
+=======
+>>>>>>> 74b116d8a7c4567931c8ba60c742cb079d919b7a
 void Error_C :: PrintError()
 {
 	switch (Error_C :: state)
 	{
+<<<<<<< HEAD
 		case IS_OK:
 		std :: cout << "no error";
 		break;
 
 		case FILE_NAME_ERR:
 		std :: cout << "error: wallet " << "wallet1 " << " already exists!";
+=======
+		case FILE_NAME_ERR:
+		std :: cout << "error: wallet " << "wallet1 " << "already exists!";
+>>>>>>> 74b116d8a7c4567931c8ba60c742cb079d919b7a
 		break;
 		
 		case AMOUNT_ERR:

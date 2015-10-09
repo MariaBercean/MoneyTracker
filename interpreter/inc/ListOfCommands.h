@@ -1,8 +1,8 @@
 #ifndef LISTOFCOMMANDS_H
 #define LISTOFCOMMANDS_H
 
-#incldue <vector>
+#include<vector>
 
-vector<std :: string> validCommands = {"create", "add"};
+std :: vector<std :: string> validCommands = {"create", "add"};
 
 #endif
