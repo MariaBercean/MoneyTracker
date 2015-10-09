@@ -9,20 +9,19 @@
 #include <iostream>
 #include <string>
 #include "Interpreter.h"
-#include "Wallet.h"
-#include "Errors.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-	Interpreter interpreter;
+	Interpreter inter;
 	if (argc <= 1) {
 		Error_C :: SetError(NO_FILE_NAME_ERR);	
 		Error_C :: PrintError();
 		return 0;
-	} else {
-		cout << "There are " << argc << " arguments:" << endl;
+	} 
+	else {
 		int i = 1;
+
 		//cout<<argv[i]<<endl;
 		if (interpreter.isValidCommand(argv[i])){
 			if (string(argv[i]) == "create") {
@@ -39,6 +38,6 @@ int main(int argc, char *argv[]) {
 			}
 		}
 	}
-	
+
 	return 0;
 }
