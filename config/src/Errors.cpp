@@ -16,11 +16,6 @@ Error_E Error_C :: GetError()
 	return state;
 }
 
-void Error_C :: PrintError()
-{
-	switch (Error_C :: state)
-	{
-
 void Error_C :: PrintError(std :: string walletName, float amount)
 {
 	switch (Error_C :: state)

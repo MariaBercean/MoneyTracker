@@ -30,6 +30,5 @@ int main(int argc, char *argv[]) {
 	//cout<<wallet.fileExists ("..\\wallet.txt");
 	wallet.createNewWalletFile ("..\\fisier.txt", '+', 0);
 	wallet.addIncome ("..\\fisier.txt", '-', 255.557);
-	Error_C :: PrintError();
 	return 0;
 }

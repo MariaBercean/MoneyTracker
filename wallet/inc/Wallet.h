@@ -14,14 +14,24 @@ class Wallet
 	
 	public:
 		Wallet();
+<<<<<<< HEAD
 		void createFile()
+=======
+
+>>>>>>> Taskcata
 		void createNewWalletFile(const std :: string wallet, 
 								const char operation, const float amount);
 								
 		void addIncome(const std :: string wallet, const char operation, 
 						const float amount);
 						
+<<<<<<< HEAD
 		bool fileExists (const std::string &fileName);
+=======
+		bool fileExists (const std :: string &fileName);
+
+		std :: string SplitFilename (const std :: string &str);
+>>>>>>> Taskcata
 };
 
 

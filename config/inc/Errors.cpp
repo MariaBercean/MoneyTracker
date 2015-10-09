@@ -15,7 +15,7 @@ Error_E Error_C :: GetError()
 	return state;
 }
 
-void Error_C :: PrintError()
+void Error_C :: PrintError(std :: string walletName, float amount)
 {
 	switch (Error_C :: state)
 	{
@@ -24,11 +24,11 @@ void Error_C :: PrintError()
 		break;
 
 		case FILE_NAME_ERR:
-		std :: cout << "error: wallet " << "wallet1 " << " already exists!";
+		std :: cout << "error: wallet " << walletName << " already exists!";
 		break;
 		
 		case AMOUNT_ERR:
-		std :: cout << "error: " << "amount" << " is not a valid initial amount.";
+		std :: cout << "error: " << amount << " is not a valid initial amount.";
 		break;
 		
 		case COMMAND_ERR:

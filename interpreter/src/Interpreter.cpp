@@ -1,23 +1,27 @@
 #include <string>
 #include <iostream>
+<<<<<<< HEAD
 
+=======
+#include <sstream>
+#include <stdlib.h>
+>>>>>>> Taskcata
 #include "Interpreter.h"
 
 using namespace std;
 
 bool Interpreter :: isValidCommand(const string &command)
 {
-	for(int i = 0; i < validCommands.size(); i++){
-		if(validCommands[i].compare(command)){
-			return false;
-		}
+	if(command == "create" || command == "income"){
+		return true;
 	}
-	return true;
+	return false;
 }
+
 
 bool Interpreter :: isValidAmount(const string &amount)
 {
-	for(int i = 0; i < amount.strlen(); i++)
+	for(int i = 0; i < amount.length(); i++)
 	{
 		if(amount[i] == ',')
 			return 0;
@@ -28,7 +32,7 @@ bool Interpreter :: isValidAmount(const string &amount)
 char Interpreter :: returnOperation(const string &amount)
 {
 	char operation = '\0';
-	if(amout[0] == '-'){
+	if(amount[0] == '-'){
 		operation = '-';
 	}
 	else{
@@ -37,14 +41,13 @@ char Interpreter :: returnOperation(const string &amount)
 	return operation;
 }
 
-void Interpreter :: createWallet(const string &fileName, const & string amount)
+void Interpreter :: createWallet(string &fileName, string &amount)
 {
-	char operation = returnOperation(&amount);
+	char operation = returnOperation(amount);
 	fileName = fileName + ".txt";
 	float amountSum = 0;
-	amount.erase(0);
-	if(isValidAmount() == 0){
-		Error_C :: setError(INVALID_INCOME_ERR);
+	if(isValidAmount(amount) == 0){
+		Error_C :: SetError(INVALID_INCOME_ERR);
 	}
 	else{
 		amountSum = atof(amount.c_str());
@@ -54,25 +57,24 @@ void Interpreter :: createWallet(const string &fileName, const & string amount)
 
 }
 
-void Interpreter :: addIncome(const string &amount)
+void Interpreter :: addIncome(const string & fileName, string &amount)
 {
-	char operation = returnOperation(&amount);
+	char operation = returnOperation(amount);
 	float amountSum;
-	
-	if(isValidAmount() == 0){
-		Error_C setError(INVALID_INCOME_ERR);
+	if(isValidAmount(amount) == 0){
+		Error_C :: SetError(INVALID_INCOME_ERR);
 	}
 	else if(operation == '-')
 	{
-		Error_C :: setError(NEG_INCOME_ERR);
+		Error_C :: SetError(NEG_INCOME_ERR);
 	}
 	else{
-		amountSum = atof(amount.c_str())
+		amountSum = atof(amount.c_str());
 		if(amountSum == 0){
-			Error_C :: setError(NEG_INCOME_ERR);
+			Error_C :: SetError(NEG_INCOME_ERR);
 		}
 		else{
-		wallet_.addIncome(operation, amountSum);
+		wallet_.addIncome(fileName, operation, amountSum);
 		}
 	}
 }
