@@ -13,7 +13,7 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-	Interpreter inter;
+	Interpreter interpreter;
 	if (argc <= 1) {
 		Error_C :: SetError(NO_FILE_NAME_ERR);	
 		Error_C :: PrintError();
