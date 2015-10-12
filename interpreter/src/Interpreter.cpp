@@ -5,7 +5,6 @@
 #include <math.h>
 #include "Interpreter.h"
 
-
 using namespace std;
 
 bool Interpreter :: isValidCommand(const string &command)
