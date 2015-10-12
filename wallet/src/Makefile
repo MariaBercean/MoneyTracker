@@ -16,8 +16,8 @@ WalletEntry.o : ..\inc\WalletEntry.h WalletEntry.cpp
 Wallet.o : ..\inc\Wallet.h Wallet.cpp ..\..\config\inc\Errors.h ..\..\config\inc\ErrorTypes.h
 	$(COMPILE) $(CFLAGS) Wallet.cpp 
 	
-..\..\config\inc\Errors.o : ..\..\config\inc\Errors.cpp ..\..\config\inc\Errors.h ..\..\config\inc\ErrorTypes.h
-	$(COMPILE) $(CFLAGS) ..\..\config\inc\Errors.cpp
+Errors.o : ..\..\config\inc\Errors.cpp ..\..\config\inc\Errors.h ..\..\config\inc\ErrorTypes.h
+	$(COMPILE) $(CFLAGS) C:\learn\Project\MoneyTracker\config\inc\Errors.cpp
 		
 clean: 
 	del *.o
