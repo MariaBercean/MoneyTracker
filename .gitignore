@@ -1,4 +1,4 @@
 *.o
 *.exe
 *.log
-!test_*.log
+

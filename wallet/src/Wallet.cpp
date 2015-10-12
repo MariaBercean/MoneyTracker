@@ -4,7 +4,7 @@
 #include <fstream>
 #include <iomanip>
 #include "Wallet.h"
-#include "Errorst.h"
+#include "Errors.h"
 
 using namespace std;
 
@@ -40,7 +40,7 @@ void Wallet :: createNewWalletFile (const std :: string &wallet,
 			} else {
 				workFile << "00.00"; 
 			}
-			workFile << " " <<"RON \n"; 
+			workFile << " " <<"RON\n"; 
 			if (workFile.good()) {
 				workFile.close();
 			 	Success_C :: SetSuccess(FILE_CREATED_SUCC);
