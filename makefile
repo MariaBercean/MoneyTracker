@@ -4,7 +4,7 @@ LINK = g++ -o
 
 main: MoneyTracker.exe
 	
-MoneyTracker.exe: wallet\src\WalletEntry.o main\src\MoneyTracker.o wallet\src\Wallet.o interpreter\src\Interpreter.o config\src\Errors.o
+MoneyTracker.exe: wallet\src\WalletEntry.o main\src\MoneyTracker.o wallet\src\Wallet.o interpreter\src\Interpreter.o config\src\Errors.o 
 	$(LINK) MoneyTracker config\src\Errors.o wallet\src\WalletEntry.o wallet\src\Wallet.o interpreter\src\Interpreter.o main\src\MoneyTracker.o
 
 main\src\MoneyTracker.o: main\src\MoneyTracker.cpp interpreter\src\Interpreter.cpp interpreter\inc\Interpreter.h
@@ -21,3 +21,7 @@ wallet\src\WalletEntry.o: wallet\src\WalletEntry.cpp wallet\inc\WalletEntry.h
 	
 config\src\Errors.o: config\src\Errors.cpp config\inc\ErrorTypes.h config\inc\Errors.h
 	$(COMP) -Iconfig\inc -o config\src\Errors.o -c config\src\Errors.cpp
+	
+clean: 
+	del /S *.o
+	del /S *.exe

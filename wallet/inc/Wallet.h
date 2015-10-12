@@ -15,15 +15,15 @@ class Wallet
 	public:
 		Wallet();
 
-		void createNewWalletFile(const std :: string wallet, 
+		void createNewWalletFile(const std :: string &wallet, 
 								const char operation, const float amount);
 								
-		void addIncome(const std :: string wallet, const char operation, 
+		void addIncome(const std :: string &wallet, const char operation, 
 						const float amount);
 						
 		bool fileExists (const std :: string &fileName);
 
-		std :: string SplitFilename (const std :: string &str);
+		//std :: string SplitFilename (const std :: string &str);
 };
 
 

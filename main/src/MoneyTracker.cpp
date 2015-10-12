@@ -14,30 +14,40 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 	Interpreter interpreter;
-	if (argc <= 1) {
+	if (argc <= 2) {
 		Error_C :: SetError(NO_FILE_NAME_ERR);	
 		Error_C :: PrintError();
 		return 0;
-	} 
-	else {
+	} else {
 		int i = 1;
-
 		//cout<<argv[i]<<endl;
 		if (interpreter.isValidCommand(argv[i])){
 			if (string(argv[i]) == "create") {
-				string fileName = argv[i+1];
-				string amount = argv[i+2];
-				interpreter.createWallet(fileName, amount);
-			} else {
+				i++;
+				if (i < argc) {
+					string fileName = argv[i];
+					string amount = "+00.00";
+					i++;
+					if (i < argc) {
+						amount = argv[i];
+					}
+					interpreter.createWallet(fileName, amount);
+				}
+			} else if (string(argv[i]) == "income") {
 				string fileName = "file.txt";
-				string amount = argv[i+1];
+				string amount = "+00.00";
+				i++;
+				if (i < argc) {
+					amount = argv[i];
+				}
 				interpreter.addIncome(fileName, amount);
 			}
-		for (int i = 0; i < argc; i++) {
-			cout << i << " " << argv[i] << endl;
-			}
+		
 		}
 	}
-
+	
+	/* for (int i = 0; i < argc; i++) {
+		cout <<endl<< i << " " << argv[i] << endl;
+	} */
 	return 0;
 }

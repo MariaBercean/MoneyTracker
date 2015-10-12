@@ -1,7 +1,7 @@
 #ifndef INTERPRETER_H
 #define INTERPRETER_H
 
-#include "Errorst.h"
+#include "Errors.h"
 #include "Wallet.h"
 //#include "ListOfCommands.h"
 
@@ -16,6 +16,7 @@ class Interpreter
 		void addIncome(const std :: string &fileName, std :: string &amount);
 		char returnOperation(const std :: string &amount);
 		bool isValidAmount(const std :: string &amount);
+		float roundNumber (const char operation, const float number);
 };
 
 #endif
