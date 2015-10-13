@@ -61,12 +61,12 @@ wallet\tst\TestWallet.o:wallet\tst\TestWallet.cpp
 
 
 clean:
+	rm config\tst\TestErrors.o
+	rm wallet\tst\TestWallet.o
+	rm interpreter\tst\TestInterpreter.o 
 	rm config\src\Errors.o
 	rm wallet\src\WalletEntry.o
 	rm wallet\src\Wallet.o
 	rm interpreter\src\Interpreter.o
 	rm main\src\MoneyTracker.o
-	rm config\tst\TestErrors.o
-	rm wallet\tst\TestWallet.o
-	rm interpreter\tst\TestInterpreter.o
 	rm *.exe

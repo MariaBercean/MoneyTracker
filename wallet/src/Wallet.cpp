@@ -21,19 +21,16 @@ void Wallet :: createNewWalletFile (const std :: string &wallet,
 	cout<<"OHOOOOOO "<<amount<<endl; */
 	string fileName = wallet;
 	if (fileExists (fileName.c_str())) {
-		//cout<<"Error file allreasy exists : "<<endl;
 		Error_C :: SetError(FILE_NAME_ERR);	
 		Error_C :: PrintError(fileName);
 	} else {
 		ofstream workFile;
 		workFile.open(fileName.c_str());
 		if (!workFile.good()) {
-		//cout<<"Error writing to file : "<<endl;
 		Error_C :: SetError(OPEN_FILE_ERR);	
 		Error_C :: PrintError(fileName);
 		workFile.close();
 		} else {
-			//workFile.open();
 			workFile << operation;
 			if (amount != 0) {
 				workFile << fixed << setprecision(2) <<amount; 
