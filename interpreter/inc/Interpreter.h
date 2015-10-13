@@ -1,15 +1,9 @@
 #ifndef INTERPRETER_H
 #define INTERPRETER_H
 
-<<<<<<< HEAD
 #include "Errors.h"
-#include "ListOfCommands.h"
-#include "Wallet.h"
-=======
-#include "Errorst.h"
 #include "Wallet.h"
 //#include "ListOfCommands.h"
->>>>>>> Taskcata
 
 class Interpreter
 {
@@ -22,6 +16,7 @@ class Interpreter
 		void addIncome(const std :: string &fileName, std :: string &amount);
 		char returnOperation(const std :: string &amount);
 		bool isValidAmount(const std :: string &amount);
+		float roundNumber (const char operation, const float number);
 };
 
 #endif

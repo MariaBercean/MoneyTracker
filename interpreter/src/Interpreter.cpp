@@ -1,11 +1,8 @@
 #include <string>
 #include <iostream>
-<<<<<<< HEAD
-
-=======
 #include <sstream>
 #include <stdlib.h>
->>>>>>> Taskcata
+#include <math.h>
 #include "Interpreter.h"
 
 using namespace std;
@@ -18,10 +15,9 @@ bool Interpreter :: isValidCommand(const string &command)
 	return false;
 }
 
-
 bool Interpreter :: isValidAmount(const string &amount)
 {
-	for(int i = 0; i < amount.length(); i++)
+	for(unsigned int i = 0; i < amount.length(); i++)
 	{
 		if(amount[i] == ',')
 			return 0;
@@ -44,17 +40,18 @@ char Interpreter :: returnOperation(const string &amount)
 void Interpreter :: createWallet(string &fileName, string &amount)
 {
 	char operation = returnOperation(amount);
-	fileName = fileName + ".txt";
+	//to do if this extension will be required
+	//fileName = fileName + ".txt";
 	float amountSum = 0;
 	if(isValidAmount(amount) == 0){
-		Error_C :: SetError(INVALID_INCOME_ERR);
+		Error_C :: SetError(AMOUNT_ERR);
+		Error_C :: PrintError(fileName, amount);
 	}
 	else{
-		amountSum = atof(amount.c_str());
+		amountSum = fabs(atof(amount.c_str())); 
+		amountSum = roundNumber(operation, amountSum);
 		wallet_.createNewWalletFile(fileName, operation, amountSum);
 	}
-	
-
 }
 
 void Interpreter :: addIncome(const string & fileName, string &amount)
@@ -70,6 +67,7 @@ void Interpreter :: addIncome(const string & fileName, string &amount)
 	}
 	else{
 		amountSum = atof(amount.c_str());
+		amountSum = roundNumber(operation, amountSum);
 		if(amountSum == 0){
 			Error_C :: SetError(NEG_INCOME_ERR);
 		}
@@ -78,4 +76,15 @@ void Interpreter :: addIncome(const string & fileName, string &amount)
 		}
 	}
 }
+
+float Interpreter :: roundNumber (const char operation, const float number)
+{
+	if (operation == '+') {
+		return roundf(number * 100) / 100;
+	} else {
+		return ceilf(number * 100) / 100;
+	}
+		
+}
+
 

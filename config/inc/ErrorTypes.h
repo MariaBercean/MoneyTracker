@@ -1,6 +1,12 @@
 #ifndef ERRORTYPES_H
 #define ERRORTYPES_H
 
+enum Success_E
+{
+	IS_EMPTY,
+	FILE_CREATED_SUCC
+};
+
 enum Error_E
 {
 	IS_OK,
@@ -11,7 +17,8 @@ enum Error_E
 	NEG_INCOME_ERR,
 	INVALID_INCOME_ERR,
 	NO_AMOUNT_ERR,
-	OPEN_FILE_ERR
+	OPEN_FILE_ERR,
+	INVALID_INITIAL_AMOUNT
 };
 
 #endif

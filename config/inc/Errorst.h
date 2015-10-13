@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 #ifndef ERRORST_H
 #define	ERRORST_H
 
-=======
-#ifndef ERRORS_H
-#define	ERRORS_H
-#include <string>
->>>>>>> Taskcata
 #include "ErrorTypes.h"
 
 class Error_C
