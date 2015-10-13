@@ -35,9 +35,9 @@ TEST (returnOperation, TestAmountOperation)
 TEST (roundNumber, TestRoundNumber)
 {
 	Interpreter interpreter;
-	EXPECT_EQ(22.13, interpreter.roundNumber('+',22.125));
-	EXPECT_EQ(123.1, interpreter.roundNumber('+',123.1));
-	EXPECT_EQ(123.56, interpreter.roundNumber('-',123.5599));
+	EXPECT_FLOAT_EQ(22.13, interpreter.roundNumber('+',22.125));
+	EXPECT_FLOAT_EQ(123.1, interpreter.roundNumber('+',123.1));
+	EXPECT_FLOAT_EQ(123.56, interpreter.roundNumber('-',123.5599));
 }
 //=============================================================================
 
