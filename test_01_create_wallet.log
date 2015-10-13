@@ -23,7 +23,7 @@ Example #3
 [TEST: output] 
 error: wallet yetother already exists!
 [TEST: file] 
-+200.00 RON
+-1021.23 RON
 ... end ... 
 
 Example #4 
@@ -42,7 +42,7 @@ noinitial.wallet created with the initial amount of +00.00 RON
 
 Example #6 
 [TEST: output] 
-error: 12,24 is not a valid initial ammount.
+error: 12,24 is not a valid initial amount.
 Creating wrongdec.wallet aborted.
 [TEST: file] 
 The system cannot find the file specified.
@@ -60,4 +60,4 @@ Example #8
 error: at least filename should be specified.
 ... end ... 
 
-Could Not Find C:\learn\MoneyTracker\wrongdec.wallet
+Could Not Find C:\learn\Project\MoneyTracker\wrongdec.wallet

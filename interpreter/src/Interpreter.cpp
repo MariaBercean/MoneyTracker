@@ -17,7 +17,7 @@ bool Interpreter :: isValidCommand(const string &command)
 
 bool Interpreter :: isValidAmount(const string &amount)
 {
-	for(int i = 0; i < amount.length(); i++)
+	for(unsigned int i = 0; i < amount.length(); i++)
 	{
 		if(amount[i] == ',')
 			return 0;
