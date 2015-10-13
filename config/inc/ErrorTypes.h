@@ -1,12 +1,14 @@
 #ifndef ERRORTYPES_H
 #define ERRORTYPES_H
 
+//enumeration with possible succes messages
 enum Success_E
 {
 	IS_EMPTY,
 	FILE_CREATED_SUCC
 };
 
+//enumeration with possible errors
 enum Error_E
 {
 	IS_OK,
