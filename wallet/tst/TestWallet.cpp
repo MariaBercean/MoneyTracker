@@ -67,7 +67,7 @@ TEST(CreateWalletTest, TestCreateWithPath)
 {
 	//ARRANGE
 	Wallet wallet;
-	std :: string filename = "C:\\learn\\Project\\MoneyTracker\\file";
+	std :: string filename = "wallet\\tst\\file";
 	wallet.createNewWalletFile(filename, '+', 00.00);
 	//ASSERT
 	EXPECT_EQ(1 , wallet.fileExists(filename));
